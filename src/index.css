@@ -1,0 +1,267 @@
+/* IMPORT TAILWIND */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CSS RESET */
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;  
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* IMPORT FONTS */
+@font-face {
+  font-family: "Space Grotesk Bold";
+  src: url("../src/fonts/SpaceGrotesk-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Space Grotesk Regular";
+  src: url("../src/fonts/SpaceGrotesk-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Space Grotesk Medium";
+  src: url("../src/fonts/SpaceGrotesk-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Space Grotesk SemiBold";
+  src: url("../src/fonts/SpaceGrotesk-SemiBold.ttf");
+}
+
+/* VARIABLES */
+:root{
+  --observableBlack: #0F0F0F;
+  --starWhite: #FBFBFB;
+  --galaxyPurple: #A143FF;
+}
+
+/* GENERAL STYLING */
+body{
+  background-color: var(--observableBlack);
+  color: var(--starWhite);
+  font-family: "Space Grotesk Regular", sans-serif;
+}
+
+
+/* OUTLINE TEXT */
+.outlineText {
+  color: #000000;
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(255,255,255,1) 0%, rgba(130,32,255,1) 100%);
+  background-size: 150% 150%;
+  background-clip: text;
+  -webkit-text-stroke: 3px transparent;
+}
+
+/* ACTIVE NAVLINKS - TEMP STYLING*/
+.active{
+  /* color: var(--galaxyPurple); */
+  opacity: 0.6;
+  /* text-decoration: underline;
+  text-underline-offset: 8px;
+  text-underl */
+}
+
+/* STATES - ANIMATIONS - TODO SPICE UP*/
+.defaultHover:hover{
+  opacity: 0.5;
+  transition: ease-in;
+}
+
+.pulse{
+  animation: pulse 1s ease-in-out infinite;
+}
+
+@keyframes pulse{
+  0% {
+    transform: scale(1);
+  }
+  
+  70% {
+    transform: scale(1.1);
+  }
+  
+  100% {
+    transform: scale(1);
+  }
+}
+
+.fadeIn {
+  animation: fadeInSlow 0.4s ease;
+}
+
+.fadeIn2 {
+  transition: 1s ease-in;
+}
+
+.fadeInSlow {
+  animation: fadeInSlow 5s ease;
+}
+
+@keyframes fadeInSlow {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeOut::after {
+  animation: fadeInSlow 2s ease-in-out;
+}
+
+@keyframes fadeOutSlow {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.hoverAnim {
+  animation: hoverAnim 2s ease infinite; 
+}
+
+@keyframes hoverAnim {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.hoverAnimDelay1 {
+  animation: hoverAnim 3s ease infinite;
+}
+
+.shakeIt {
+  animation: shakeIt 3s ease;
+}
+
+@keyframes shakeIt {
+  0% { transform: translateX(0) }
+  25% { transform: translateX(5px) }
+  50% { transform: translateX(-5px) }
+  75% { transform: translateX(5px) }
+  100% { transform: translateX(0) }
+ }
+
+/* CHECKOUT FLOW */
+.bg-planet {
+  background-image: url(https://space-debris-2022-q3.akqa.dk/media/5nynir3y/planetbg.png);
+  background-position: bottom left ;
+  background-repeat: no-repeat;
+}
+
+/* STEPS */
+
+.stepper span {
+  font-family: "Space Grotesk Regular", sans-serif;
+  text-transform: uppercase;
+}
+
+/* Pointer for facts */
+
+.pointerline {
+  height: 100%;
+  width: 100px;
+  border-top: 1px dashed var(--starWhite);
+  border-right: 1px dashed var(--starWhite);
+}
+
+/* PackageDisplayCard */
+
+.packagedisplaycard {
+  cursor: pointer;
+  transition:border-color 0.1s;
+}
+
+.packagedisplaycard.selected {
+  border-color: var(--galaxyPurple);
+}
+
+.pricetag::before {
+  content: url(https://space-debris-2022-q3.akqa.dk/media/khwcjbdl/spacecoin-purple.svg);
+  padding-right: 5px;
+  /* background-image: url(https://space-debris-2022-q3.akqa.dk/media/khwcjbdl/spacecoin-purple.svg);
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 20px; 
+  height: 20px;
+  content:""; */
+}
+
+.brackets::before {
+  content: "["
+}
+
+.brackets::after {
+  content: "]"
+}
+
+.underscore::before {
+  content: "_"
+}
+
+/* GSAP */
+.gsapFadeUp{
+  transform: translateY(30px);
+  opacity: 0;
+}
+
+.gsapFadeDown{
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.headingFade{
+  opacity: 0;
+  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+  transform: translateY(50px);
+}
+
+.gsapFadeIn{
+  opacity: 0;
+}
+
+.prevent-select {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+.terms-list ol li {
+  list-style-type: numbers;
+  margin: 20px 0;
+}
+
+.transition{
+  transition: width 0.3s ease-in-out;
+}
+
+@keyframes width {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}

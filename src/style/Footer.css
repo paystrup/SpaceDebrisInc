@@ -1,0 +1,12 @@
+.svgList svg{
+    height: 20px;
+    width: 20px;
+}
+
+
+@media screen and (max-width: 900px) {
+    .svgList svg{
+        height: 30px;
+        width: 30px;
+    }
+  }

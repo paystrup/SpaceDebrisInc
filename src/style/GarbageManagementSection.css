@@ -1,0 +1,172 @@
+
+/* MEDIUM MOBILE */
+
+@media only screen and (min-width:375px) and (max-width:639px){
+
+
+
+
+
+}
+
+
+
+/* ANIMATION 1 */
+.shapes {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 400px;
+
+}
+.shapes .rocket {
+    transform: rotate(113deg);
+    z-index: 100 !important;
+
+}
+.shapes .rocket-holder {
+    /* i stedet for bounce */
+    
+    z-index: 100 !important;
+    position: absolute;
+    top: 50%;
+  left:50%;
+  transform: translateY(-50%) translateX(-50%);
+}
+
+.shapes .rocket-holder img {
+    animation:up-down infinite ;
+      /* kører roligt, foran først og så baglæns (back to startposition=*/
+    animation-direction: alternate;
+    animation-duration: 150ms;
+}
+
+/* Animate "bounce" på raket */
+ @keyframes up-down {
+    100% {transform: translateY(0px) rotate(113deg); }
+   0% {transform: translateY(2px) rotate(113deg);}
+}
+.shapes .shape0 {
+    position: absolute;
+    background: beige;
+    border-radius: 80%;
+    z-index: 8;
+    /* Gem skudene */
+    right: -60px;
+    animation: rocket infinite;
+    /* animation-iteration-count: 5; */
+
+}
+
+
+
+.shapes .shape1 {
+    height: 3px;
+    width: 30px;
+    top: 50%;
+    animation-duration: 4s;
+    animation-delay: 700ms;
+}
+
+.shapes .shape2 {
+    height: 3px;
+    width: 60px;
+    top: 60%;
+    animation-duration: 4s;
+    animation-delay: 500ms;
+}
+
+.shapes .shape3 {
+    height: 3px;
+    width: 30px;
+    top: 45%;
+    animation-duration: 4s;
+    animation-delay: 150ms;
+
+}
+
+
+.shapes .shape4 {
+    height: 3px;
+    width: 10px;
+    top: 60%;
+
+    animation-duration: 4s;
+    animation-delay: 100ms;
+}
+
+.shapes .shape5 {
+    height: 3px;
+    width: 30px;
+    top: 50%;
+
+    animation-duration: 4s;
+
+}
+
+
+@keyframes rocket {
+    0% {transform:translateX(0px)}
+    100% {transform:translateX(-4000px)}
+}
+
+
+
+
+.planets {
+    position: absolute;
+     right: -105px;
+     z-index: -1;
+     animation: rocket ;
+    animation-iteration-count: infinite;
+    animation-duration: 15s;
+
+}
+
+/* Different delays */
+.planet1 {
+
+    top: 50%;
+    animation-delay: 50ms;
+}
+.planet2 {
+
+    top:9%;
+    animation-delay: 2s;
+}
+.planet4 {
+
+    bottom:5%;
+    animation-delay: 3s;
+}
+
+.planet5 {
+
+    bottom:30%;
+    animation-delay: 5s;
+}
+
+.planet6 {
+
+    top:20%;
+    animation-delay: 8s;
+}
+.planet7 {
+
+    bottom:30%;
+    animation-delay: 9s;
+}
+.planet8 {
+    width: 100px;
+    bottom:45%;
+    left: -1000;
+    animation-duration:40s ;
+    animation-delay: 1s;
+}
+.planet9 {
+
+    bottom:10%;
+    animation-delay: 6s;
+}
+
+
